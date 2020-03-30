@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -339,5 +339,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e313398508b4053942f94821862d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverIP: 127.0.0.1
+  serverIP: 54.82.245.79
   serverPort: 12345
+  PlayerCube: {fileID: 1741153786137497826, guid: 9a82a29ffcc19034ca5ba6bf0e2402a8,
+    type: 3}
+  m:
+    cmd: 2
+    player:
+      id: 
+      cubeColor: {r: 0, g: 0, b: 0, a: 0}
+      cubPos: {x: 0, y: 0, z: 0}
+      playerTag: 0
+  myCube:
+    id: 
+    cubeColor: {r: 0, g: 0, b: 0, a: 0}
+    cubPos: {x: 0, y: 0, z: 0}
+    playerTag: 0
