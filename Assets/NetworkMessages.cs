@@ -62,20 +62,50 @@ namespace NetworkMessages
         }
     }
 
+    [System.Serializable]
+    public class NewCube : NetworkHeader
+    {
+        public Player player;
+
+        public NewCube(Client c)
+        {
+            cmd = Commands.SERVER_UPDATE;
+            player = new Player(c);
+        }
+    }
+
+
+    [System.Serializable]
+    public class ConnectedCube : NetworkHeader
+    {
+        public Player[] connect;
+
+
+        public ConnectedCube(System.Collections.Generic.List<Client> clients)
+        {
+            cmd = Commands.PLAYER_UPDATE;
+            connect = new Player[clients.Count];
+            for (int i = 0; i < clients.Count; i++)
+            {
+                connect[i] = new Player(clients[i]);
+            }
+        }
+    }
 
 
 
+
+    //-------
     [System.Serializable]
     public class NetworkHeader{
         public Commands cmd;
     }
-    //-----
 
     [System.Serializable]
-    public class UpdatedPlayer : NetworkHeader
+    public class UpdatedCubes : NetworkHeader
     {
         public Player[] update;
-        public UpdatedPlayer(System.Collections.Generic.List<Client> clients)
+        public UpdatedCubes(System.Collections.Generic.List<Client> clients)
         {
             cmd = Commands.PLAYER_UPDATE;
             update = new Player[clients.Count];
@@ -109,6 +139,7 @@ namespace NetworkMessages
 
     public class PlayerInputMsg:NetworkHeader{
         public Input myInput;
+        public Vector3 vector3Input;
         public PlayerInputMsg(){
             cmd = Commands.PLAYER_INPUT;
             myInput = new Input();
